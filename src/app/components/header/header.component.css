@@ -6,12 +6,15 @@
 
 .my-row {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
+    margin: 0px 15px;
 }
 
-.my-row > * {
-    margin: 10px;
+ul {
+    display: flex;
+    gap: 15px;
+    list-style: none;
 }
 
 #logo {
