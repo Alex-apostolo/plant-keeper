@@ -1,0 +1,20 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.my-row {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.my-row > * {
+    margin: 10px;
+}
+
+#logo {
+    width: 150px;
+    height: 100px;
+}
