@@ -1,0 +1,19 @@
+form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* margin-top: 100px; */
+}
+
+form input {
+    width: 50%;
+    height: 45px;
+}
+
+form button {
+    width: 50px;
+    height: 45px;
+    outline: none;
+    border: none;
+    background: #7dd777;
+}

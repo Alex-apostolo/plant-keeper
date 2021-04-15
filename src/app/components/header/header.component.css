@@ -1,14 +1,13 @@
-*, *::before, *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 .my-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 0px 15px;
+}
+
+.logo {
+    width: 150px;
+    height: 100px;
 }
 
 ul {
@@ -17,7 +16,6 @@ ul {
     list-style: none;
 }
 
-#logo {
-    width: 150px;
-    height: 100px;
+a {
+    color: #7dd777;
 }
