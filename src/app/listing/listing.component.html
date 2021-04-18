@@ -1,0 +1,91 @@
+<div
+  style="
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 1px black;
+  "
+>
+  <form>
+    <div style="display: flex; justify-content: space-between">
+      <input
+        style="display: none"
+        type="file"
+        formControlName="files"
+        multiple
+        (change)="onFileChanged($event)"
+        #hiddenfileinput
+      />
+      <img
+        class="listing-image"
+        [src]="url || 'https://place-hold.it/150x150/fff/000?text=Select+Image'"
+        (click)="hiddenfileinput.click()"
+      />
+      &nbsp; &nbsp; &nbsp;
+      <div
+        style="
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+        "
+      >
+        <mat-form-field appearance="fill" style="width: 220px">
+          <mat-label>Choose a Start date</mat-label>
+          <input
+            matInput
+            readonly
+            [min]="minDate"
+            #startDate
+            [matDatepicker]="picker"
+            (dateChange)="chooseStartDate(startDate.value)"
+          />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field appearance="fill" style="width: 220px">
+          <mat-label>Choose an End date</mat-label>
+          <input
+            matInput
+            [min]="minDate"
+            [disabled]="disableDate"
+            readonly
+            [matDatepicker]="picker1"
+          />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker1"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+      </div>
+    </div>
+    <br />
+    <h4 style="text-align: left">Contact Information</h4>
+    <input type="text" placeholder="First Name" />
+    &nbsp; &nbsp;
+    <input type="text" placeholder="Last Name" /><br /><br />
+    <input
+      type="text"
+      placeholder="Email Address"
+      style="width: 100%"
+    /><br /><br />
+    <input type="text" placeholder="Location" />
+    &nbsp; &nbsp;
+    <input type="text" placeholder="Post Code" /><br /><br />
+    <h4 style="text-align: left">Listing Description</h4>
+    <textarea
+      type="text"
+      placeholder="Write a description/reasoning for your listing."
+      style="width: 100%; height: 150px"
+    ></textarea
+    ><br /><br />
+
+    <button type="submit" style="width: 100%">Create Listing</button
+    ><br /><br />
+    <!-- <input type="file" (change)="onFileChanged($event)" /> -->
+  </form>
+</div>
