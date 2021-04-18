@@ -1,0 +1,32 @@
+::-webkit-input-placeholder {
+  text-align: center;
+}
+
+.icons {
+  font-size: 40px;
+}
+
+#facebook {
+  transition: color 1s;
+}
+#facebook:hover {
+  color: #3b5998;
+  cursor: pointer;
+}
+
+#google {
+  transition: color 1s;
+}
+#google:hover {
+  color: green;
+  cursor: pointer;
+}
+
+#twitter {
+  transition: color 1s;
+}
+
+#twitter:hover {
+  color: #00acee;
+  cursor: pointer;
+}
