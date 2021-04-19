@@ -16,11 +16,15 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { LoginComponent } from './pages/login/login.component';
+import { HelpComponent } from './pages/help/help.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'listing', component: ListingComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'help', component: HelpComponent},
 ];
 
 @NgModule({
@@ -32,6 +36,8 @@ const appRoutes: Routes = [
     ProfileComponent,
     SignupComponent,
     ListingComponent,
+    LoginComponent,
+    HelpComponent,
     // NgbCarousel,
   ],
   imports: [
