@@ -1,19 +1,27 @@
 form {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* margin-top: 100px; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* margin-top: 100px; */
 }
 
 form input {
-    width: 50%;
-    height: 45px;
+  width: 50%;
+  height: 45px;
 }
 
 form button {
-    width: 50px;
-    height: 45px;
-    outline: none;
-    border: none;
-    background: #7dd777;
+  width: 50px;
+  height: 45px;
+  outline: none;
+  border: none;
+  background: #7dd777;
+}
+
+.profile-image {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border: 2px solid black;
+  border-radius: 50%;
 }

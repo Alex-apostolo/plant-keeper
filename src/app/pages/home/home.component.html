@@ -1,4 +1,62 @@
 <form action="">
-    <input type="text" placeholder="Search keepers by location" name="search">
-    <button type="submit"><i class="fas fa-search"></i></button>
+  <input
+    type="text"
+    placeholder="Search keepers by location"
+    name="keyword"
+    #keyword
+    (keydown.enter)="onSearch(keyword.value)"
+  />
+  <button type="button" (click)="onSearch(keyword.value)">
+    <i class="fas fa-search"></i>
+  </button>
 </form>
+<br />
+<br />
+<br />
+<br />
+<!-- <div
+  style="
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    padding-left: 20px;
+  "
+> -->
+<!-- <div class="row" style="width: 100%"> -->
+<div
+  style="
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+    /* text-align: center; */
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 60%;
+    margin: auto;
+  "
+  *ngIf="keywordExists; else elseblock"
+>
+  <div *ngFor="let keeper of tempkeepers">
+    <div
+      style="
+        width: 200px;
+        text-align: center;
+        margin: 10px auto;
+        overflow: hidden;
+      "
+    >
+      <div *ngIf="keyword.value == '' || keeper['location'] == keyword.value">
+        <img class="profile-image" [src]="keeper['url']" /><br />
+        {{ keeper["name"] }}<br />
+        {{ keeper["location"] }}<br />
+        Rating: {{ keeper["rating"] }} / 5
+      </div>
+    </div>
+  </div>
+</div>
+<ng-template #elseblock>
+  <h4>No keepers based on this location.</h4>
+</ng-template>
+<!-- </div> -->
