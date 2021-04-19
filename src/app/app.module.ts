@@ -4,13 +4,13 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
+import { HeaderComponent } from './widgets/header/header.component';
 import { NgbModule, NgbCarousel } from '@ng-bootstrap/ng-bootstrap';
-import { FooterComponent } from './components/footer/footer.component';
+import { FooterComponent } from './widgets/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
-import { ProfileComponent } from './components/profile/profile.component';
-import { SignupComponent } from './components/signup/signup.component';
-import { ListingComponent } from './listing/listing.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { SignupComponent } from './pages/signup/signup.component';
+import { ListingComponent } from './pages/listing/listing.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
