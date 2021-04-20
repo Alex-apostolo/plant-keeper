@@ -79,11 +79,12 @@
     <textarea
       type="text"
       placeholder="Write a description/reasoning for your listing."
-      style="width: 100%; height: 150px"
+      style="width: 100%; min-height: 150px"
     ></textarea
     ><br /><br />
 
-    <button type="submit" class="submit">Create Listing</button
+    <button type="submit" class="submit" (click)="router.navigate(['/'])">
+      Create Listing</button
     ><br /><br />
     <!-- <input type="file" (change)="onFileChanged($event)" /> -->
   </form>

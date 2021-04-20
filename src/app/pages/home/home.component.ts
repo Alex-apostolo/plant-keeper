@@ -86,4 +86,6 @@ export class HomeComponent implements OnInit {
     if (this.tempkeepers.length > 0) this.keywordExists = true;
     else this.keywordExists = false;
   }
+
+  goToHome() {}
 }

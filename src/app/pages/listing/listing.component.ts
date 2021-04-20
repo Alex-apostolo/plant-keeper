@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-listing',
@@ -10,12 +11,13 @@ export class ListingComponent implements OnInit {
   message: string = '';
   images = [];
 
-  constructor(config: NgbCarouselConfig) {
-    //
-    config.interval = 2000;
-    config.keyboard = true;
-    config.pauseOnHover = true;
-  }
+  // constructor(config: NgbCarouselConfig) {
+  //   //
+  //   config.interval = 2000;
+  //   config.keyboard = true;
+  //   config.pauseOnHover = true;
+  // }
+  constructor(public router: Router) {}
   minDate: Date = new Date();
 
   ngOnInit(): void {

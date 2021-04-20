@@ -8,7 +8,11 @@
     border: 1px black;
   "
 >
-    <img src="assets/animatedPlant.gif" alt="animatedPlant" class="animated-plant">
+  <img
+    src="assets/animatedPlant.gif"
+    alt="animatedPlant"
+    class="animated-plant"
+  />
   <form>
     <input type="text" placeholder="First Name" />
     &nbsp; &nbsp;
@@ -28,7 +32,8 @@
       placeholder="Confirm Password"
       style="width: 100%"
     /><br /><br />
-    <button type="submit" class="submit">Create Account</button
+    <button type="submit" class="submit" (click)="createUser()">
+      Create Account</button
     ><br /><br />
     or Sign Up with: <br />
     <div class="icons">

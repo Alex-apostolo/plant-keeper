@@ -1,0 +1,85 @@
+<div
+  *ngIf="fetched"
+  style="
+    padding: 20px;
+    margin: auto;
+    align-items: center;
+    width: 600px;
+    height: 625px;
+    border: 2px solid black;
+  "
+>
+  <div style="display: flex">
+    <img class="profile-image" src="assets/andreas.jpg" />
+    <div
+      style="
+        display: flex;
+        flex-direction: column;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+      "
+    >
+      <input
+        type="text"
+        style="text-align: center"
+        placeholder="First Name"
+        [value]="user['first_name']"
+      />
+      &nbsp; &nbsp;
+      <input
+        type="text"
+        style="text-align: center"
+        placeholder="Last Name"
+        [value]="user['last_name']"
+      /><br />
+
+      <input
+        type="text"
+        style="width: 100%"
+        placeholder="Email Address"
+        [value]="user['email']"
+      /><br />
+      <input
+        type="password"
+        style="width: 100%"
+        placeholder="Password"
+        [value]="user['password']"
+        disabled
+      /><br />
+    </div>
+  </div>
+  <div style="display: flex; margin-bottom: 0">
+    <input
+      style="margin-top: auto; margin-bottom: auto"
+      type="checkbox"
+      [checked]="user['keeperActivated']"
+      disabled
+    />
+    &nbsp;
+    <div *ngIf="user['keeperActivated']; else elseblock">
+      <label style="margin-top: auto; margin-bottom: auto"
+        >Thanks for being a keeper!</label
+      >
+    </div>
+    <ng-template #elseblock>
+      <label style="margin-top: auto; margin-bottom: auto"
+        >Not a keeper?
+        <a
+          href="mailto:support@plantkeeper.co.uk?Subject=I%20Want%20To%20Be%20A%20Keeper%20!"
+          >Contact us</a
+        >
+        to be one!</label
+      >
+    </ng-template>
+  </div>
+  <br />
+  <h3>About</h3>
+  <textarea
+    style="width: 100%; min-height: 200px; resize: none"
+    [value]="user['about']"
+  ></textarea>
+  <button type="submit" class="submit" (click)="updateDetails()">
+    Create Account
+  </button>
+</div>
