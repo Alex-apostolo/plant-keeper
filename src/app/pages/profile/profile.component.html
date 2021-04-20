@@ -1,12 +1,61 @@
-<div class="myrow">
-    <div class="mycol">
-        <img src="assets/andreas.jpg" alt="image">
-        <div>Rating: {{profile.rating}}</div>
+<div
+  *ngIf="fetched"
+  style="
+    padding: 20px;
+    margin: auto;
+    align-items: center;
+    width: 600px;
+    height: 560px;
+    border: 2px solid black;
+  "
+>
+  <div style="display: flex">
+    <img class="profile-image" [src]="profile['url']" />
+    <div
+      style="
+        display: flex;
+        flex-direction: column;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+      "
+    >
+      <input
+        type="text"
+        style="text-align: center; background-color: white"
+        placeholder="First Name"
+        [value]="profile['first_name']"
+        disabled
+      />
+      &nbsp; &nbsp;
+      <input
+        type="text"
+        style="text-align: center; background-color: white"
+        placeholder="Last Name"
+        [value]="profile['last_name']"
+        disabled
+      /><br />
+      <input
+        type="text"
+        style="width: 100%; background-color: white"
+        placeholder="Email Address"
+        [value]="profile['email']"
+        disabled
+      /><br />
+      <input
+        type="text"
+        style="width: 100%; background-color: white"
+        [value]="'Rating : ' + profile['rating'] + ' / 5'"
+        disabled
+      />
     </div>
-    <div class="mycol">
-        <div>{{profile.name}}</div>
-        <div>{{profile.address}}</div>
-        <div>{{profile.about}}</div>
-        <button>Hire</button>
-    </div>
+  </div>
+  <br />
+  <h3>About</h3>
+  <textarea
+    style="width: 100%; min-height: 200px; resize: none"
+    [value]="profile['about']"
+    disabled
+  ></textarea>
+  <button type="button" class="submit" (click)="onHire()">Hire</button>
 </div>

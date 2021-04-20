@@ -10,14 +10,14 @@
   "
 >
   <div style="display: flex">
-    <img class="profile-image" src="assets/andreas.jpg" />
+    <img class="profile-image" [src]="user['url']" />
     <div
       style="
         display: flex;
         flex-direction: column;
         margin-left: auto;
         margin-right: auto;
-        margin-top: 20px;
+        margin-top: 10px;
       "
     >
       <input
@@ -80,6 +80,6 @@
     [value]="user['about']"
   ></textarea>
   <button type="submit" class="submit" (click)="updateDetails()">
-    Create Account
+    Save Details
   </button>
 </div>

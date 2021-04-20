@@ -38,7 +38,7 @@
   "
   *ngIf="keywordExists; else elseblock"
 >
-  <div *ngFor="let keeper of tempkeepers">
+  <div *ngFor="let keeper of tempkeepers; let i = index">
     <div
       style="
         width: 200px;
@@ -48,8 +48,12 @@
       "
     >
       <div *ngIf="keyword.value == '' || keeper['location'] == keyword.value">
-        <img class="profile-image" [src]="keeper['url']" /><br />
-        {{ keeper["name"] }}<br />
+        <img
+          class="profile-image"
+          [src]="keeper['url']"
+          (click)="showProfile(i)"
+        /><br />
+        {{ keeper["first_name"] }} {{ keeper["last_name"] }}<br />
         {{ keeper["location"] }}<br />
         Rating: {{ keeper["rating"] }} / 5
       </div>

@@ -25,7 +25,7 @@ interface UserID extends User {
   providedIn: 'root',
 })
 export class DatabaseService {
-  usersCol: AngularFirestoreCollection<User> | undefined;
+  usersCol: any;
   users: any;
 
   userDoc: any;
@@ -33,9 +33,8 @@ export class DatabaseService {
   constructor(private afs: AngularFirestore) {}
 
   ngOnInit() {
-    this.usersCol = this.afs.collection('users');
-    // this.users = this.usersCol.valueChanges();
-    this.users = this.usersCol.snapshotChanges();
+    // this.usersCol = this.afs.collection('users');
+    // this.users = this.usersCol.snapshotChanges();
   }
 
   getUser(userid: string | undefined) {
@@ -45,7 +44,11 @@ export class DatabaseService {
     return this.user;
   }
 
-  fetchUsers() {}
+  getUsers() {
+    this.usersCol = this.afs.collection('/users');
+    this.users = this.usersCol.valueChanges({ idField: 'id' });
+    return this.users;
+  }
 
   testPostUser() {
     // this.http.post('/users.json',{userid})
@@ -58,6 +61,5 @@ export class DatabaseService {
       email: 'testing123@gmail.com',
       password: 'testing123',
     });
-    console.log('test');
   }
 }

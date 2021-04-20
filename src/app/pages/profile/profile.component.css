@@ -1,25 +1,40 @@
-.myrow {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    width: 50%;
-    height: 50%;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%) translateY(30%);
+/* .myrow {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) translateY(30%);
 }
 
 .mycol > * {
-    border: 2px solid lightgray;
-    width: 40vw;
-    text-align: center;
-    margin: 2px;
+  border: 2px solid lightgray;
+  width: 40vw;
+  text-align: center;
+  margin: 2px;
 }
 
 .mycol div:nth-child(2) {
-    height: 35px;
+  height: 35px;
 }
 
 .mycol div:nth-child(3) {
-    height: 100px;
+  height: 100px;
+} */
+
+.submit {
+  width: 100%;
+  height: 32px;
+  border: 1px solid black;
+  background-color: rgb(210, 0, 0);
+  color: white;
+}
+.profile-image {
+  width: 258px;
+  height: 205px;
+  object-fit: cover;
+  border: 2px solid black;
+  /* border-radius: 50%; */
 }

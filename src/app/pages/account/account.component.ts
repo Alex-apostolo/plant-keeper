@@ -19,14 +19,13 @@ interface UserID extends User {
   styleUrls: ['./account.component.css'],
 })
 export class AccountComponent implements OnInit {
-  userid: any;
   constructor(private route: ActivatedRoute, private db: DatabaseService) {}
+  userid: any;
   user: any;
   fetched: boolean = false;
   ngOnInit() {
     this.userid = this.route.snapshot.paramMap.get('id')?.toString();
     this.user = this.db.getUser(this.userid).subscribe((items: any) => {
-      console.log(items);
       this.user = items;
     });
     this.fetched = true;

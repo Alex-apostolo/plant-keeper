@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DatabaseService } from '../../services/database.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -7,18 +8,24 @@ import { DatabaseService } from '../../services/database.service';
   styleUrls: ['./profile.component.css'],
 })
 export class ProfileComponent implements OnInit {
-  constructor(private db: DatabaseService) {}
+  constructor(private route: ActivatedRoute, private db: DatabaseService) {}
+  userid: any;
+  profile: any;
+  fetched: boolean = false;
 
-  public profile = {
-    name: 'Andreas Lemesios',
-    location: 'Larnaca',
-    address: '23 Larnaca str',
-    about: 'I have secretly planted weed on my neighbours porch',
-    rating: 5,
-    url: 'assets/andreas.jpg',
-  };
+  ngOnInit() {
+    this.userid = this.route.snapshot.paramMap.get('id')?.toString();
+    this.profile = this.db.getUser(this.userid).subscribe((items: any) => {
+      this.profile = items;
+    });
+    this.fetched = true;
+  }
 
-  constructor() {}
-
-  ngOnInit(): void {}
+  onHire() {
+    var mailtext =
+      'mailto:' +
+      this.profile['email'] +
+      '?Subject=I Want To Hire You For My Plants !&body=Please take care of my plants!%0d%0a%0d%0aKind regards.';
+    window.location.href = mailtext;
+  }
 }
