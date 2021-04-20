@@ -1,0 +1,25 @@
+.myrow {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) translateY(30%);
+}
+
+.mycol > * {
+    border: 2px solid lightgray;
+    width: 40vw;
+    text-align: center;
+    margin: 2px;
+}
+
+.mycol div:nth-child(2) {
+    height: 35px;
+}
+
+.mycol div:nth-child(3) {
+    height: 100px;
+}

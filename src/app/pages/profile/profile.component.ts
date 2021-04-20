@@ -9,5 +9,16 @@ import { DatabaseService } from '../../services/database.service';
 export class ProfileComponent implements OnInit {
   constructor(private db: DatabaseService) {}
 
+  public profile = {
+    name: 'Andreas Lemesios',
+    location: 'Larnaca',
+    address: '23 Larnaca str',
+    about: 'I have secretly planted weed on my neighbours porch',
+    rating: 5,
+    url: 'assets/andreas.jpg',
+  };
+
+  constructor() {}
+
   ngOnInit(): void {}
 }
