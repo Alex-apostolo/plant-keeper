@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { DatabaseService } from '../../services/database.service';
+// import { DatabaseService } from '../../services/database.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -76,7 +76,6 @@ export class HomeComponent implements OnInit {
   }
 
   showProfile(id: number) {
-    console.log(id);
     var keepers = [
       'gFHeGdfy3MRNlIoFDfCY',
       'kLCwfKTjWx7AuIb9oxjb',
@@ -94,13 +93,11 @@ export class HomeComponent implements OnInit {
     }
     this.tempkeepers = [];
     this.keepers.forEach((dict) => {
-      if (dict['location'] == keyword) {
+      if (dict['location'].toLowerCase() == keyword.toLowerCase()) {
         this.tempkeepers.push(dict);
       }
     });
     if (this.tempkeepers.length > 0) this.keywordExists = true;
     else this.keywordExists = false;
   }
-
-  goToHome() {}
 }

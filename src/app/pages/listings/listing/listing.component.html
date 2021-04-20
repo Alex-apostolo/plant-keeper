@@ -1,0 +1,82 @@
+<div
+  *ngIf="fetched"
+  style="
+    padding: 20px;
+    margin: auto;
+    align-items: center;
+    width: 600px;
+    height: 585px;
+    border: 2px solid black;
+  "
+>
+  <div style="display: flex">
+    <img class="listing-image" [src]="listing['url']" />
+    <div
+      style="
+        display: flex;
+        flex-direction: column;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 2px;
+      "
+    >
+      <input
+        class="input-field"
+        type="text"
+        placeholder="Owner Name"
+        [value]="listing['owner']"
+        disabled
+      />
+      <input
+        type="text"
+        class="input-field"
+        placeholder="Email Address"
+        [value]="listing['email']"
+        disabled
+      />
+      <input
+        type="text"
+        class="input-field"
+        placeholder="Location"
+        [value]="listing['location']"
+        disabled
+      />
+      <input
+        type="text"
+        class="input-field"
+        placeholder="Post Code"
+        [value]="listing['postcode']"
+        disabled
+      />
+      <input
+        type="text"
+        class="input-field"
+        placeholder="Start Date"
+        [value]="'Start Date : ' + listing['startDate']"
+        disabled
+      />
+      <input
+        type="text"
+        class="input-field"
+        placeholder="End Date"
+        [value]="'End Date : ' + listing['endDate']"
+        disabled
+      />
+    </div>
+  </div>
+
+  <h3>Listing Description</h3>
+  <textarea
+    style="
+      width: 100%;
+      min-height: 200px;
+      resize: none;
+      background-color: white;
+    "
+    [value]="listing['description']"
+    disabled
+  ></textarea>
+  <button type="button" class="submit" (click)="onOffer()">
+    Offer Services
+  </button>
+</div>

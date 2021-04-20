@@ -13,10 +13,11 @@ import { FooterComponent } from './widgets/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { SignupComponent } from './pages/signup/signup.component';
-import { ListingComponent } from './pages/listing/listing.component';
+import { CreateListingComponent } from './pages/createlisting/createlisting.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { LoginComponent } from './pages/login/login.component';
@@ -24,15 +25,19 @@ import { HelpComponent } from './pages/help/help.component';
 import { DatabaseService } from './services/database.service';
 import { environment } from 'src/environments/environment';
 import { AccountComponent } from './pages/account/account.component';
+import { ListingComponent } from './pages/listings/listing/listing.component';
+import { ListingsComponent } from './pages/listings/listings.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'signup', component: SignupComponent },
-  { path: 'listing', component: ListingComponent },
+  { path: 'create-listing', component: CreateListingComponent },
   { path: 'login', component: LoginComponent },
   { path: 'help', component: HelpComponent },
   { path: 'account/:id', component: AccountComponent },
   { path: 'profile/:id', component: ProfileComponent },
+  { path: 'listings', component: ListingsComponent },
+  { path: 'listings/listing/:id', component: ListingComponent },
 ];
 
 @NgModule({
@@ -43,10 +48,12 @@ const appRoutes: Routes = [
     HomeComponent,
     ProfileComponent,
     SignupComponent,
-    ListingComponent,
+    CreateListingComponent,
     LoginComponent,
     HelpComponent,
     AccountComponent,
+    ListingsComponent,
+    ListingComponent,
     // NgbCarousel,
   ],
   imports: [
@@ -61,6 +68,7 @@ const appRoutes: Routes = [
     MatDatepickerModule,
     MatFormFieldModule,
     MatInputModule,
+    MatSelectModule,
     HttpClientModule,
   ],
   providers: [DatabaseService],

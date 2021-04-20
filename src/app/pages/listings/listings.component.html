@@ -2,8 +2,9 @@
   <input
     class="searchbar-input"
     type="text"
-    placeholder="Search keepers by location"
+    placeholder="Search listings by location"
     id="keyword"
+    name="keyword"
     #keyword
     (keydown.enter)="onSearch(keyword.value)"
     onfocus="document.getElementById('keyword').value = ''"
@@ -42,7 +43,7 @@
   "
   *ngIf="keywordExists; else elseblock"
 >
-  <div *ngFor="let keeper of tempkeepers; let i = index">
+  <div *ngFor="let listing of templistings; let i = index">
     <div
       style="
         width: 200px;
@@ -54,21 +55,23 @@
       <div
         *ngIf="
           keyword.value == '' ||
-          keeper['location'].toLowerCase() == keyword.value.toLowerCase()
+          listing['location'].toLowerCase() == keyword.value.toLowerCase()
         "
       >
         <img
-          class="profile-image"
-          [src]="keeper['url']"
-          (click)="showProfile(i)"
+          class="listing-image"
+          [src]="listing['url']"
+          (click)="showListing(i)"
         /><br />
-        {{ keeper["first_name"] }} {{ keeper["last_name"] }}<br />
-        {{ keeper["location"] }}<br />
-        Rating: {{ keeper["rating"] }} / 5
+        Owner: {{ listing["owner"] }}<br />
+        Location: {{ listing["location"] }}<br />
+        Post Code : {{ listing["postcode"] }}<br />
+        Start Date : {{ listing["startDate"] }}<br />
+        End Date : {{ listing["endDate"] }}
       </div>
     </div>
   </div>
 </div>
 <ng-template #elseblock>
-  <h4>No keepers based on this location.</h4>
+  <h4>No listings based on this location.</h4>
 </ng-template>

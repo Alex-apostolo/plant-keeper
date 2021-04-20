@@ -29,7 +29,6 @@ export class AccountComponent implements OnInit {
       this.user = items;
     });
     this.fetched = true;
-    // console.log(this.user['email']);
   }
 
   updateDetails() {}

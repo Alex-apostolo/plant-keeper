@@ -3,11 +3,11 @@ import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-listing',
-  templateUrl: './listing.component.html',
-  styleUrls: ['./listing.component.css'],
+  selector: 'app-createlisting',
+  templateUrl: './createlisting.component.html',
+  styleUrls: ['./createlisting.component.css'],
 })
-export class ListingComponent implements OnInit {
+export class CreateListingComponent implements OnInit {
   message: string = '';
   images = [];
 

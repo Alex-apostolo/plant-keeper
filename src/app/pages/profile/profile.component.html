@@ -53,9 +53,25 @@
   <br />
   <h3>About</h3>
   <textarea
-    style="width: 100%; min-height: 200px; resize: none"
+    style="
+      width: 100%;
+      min-height: 142px;
+      resize: none;
+      background-color: white;
+    "
     [value]="profile['about']"
     disabled
   ></textarea>
-  <button type="button" class="submit" (click)="onHire()">Hire</button>
+  <mat-form-field style="width: 100%">
+    <mat-label>Choose Listing:</mat-label>
+    <mat-select [(value)]="selectedListing" required>
+      <mat-option [value]="i" *ngFor="let listing of listings; let i = index">
+        {{ i }}) {{ listing.startDate }} - {{ listing.endDate }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button type="button" class="submit" (click)="onHire(selectedListing)">
+    <!-- [disabled]="!selectedListing" -->
+    Hire
+  </button>
 </div>

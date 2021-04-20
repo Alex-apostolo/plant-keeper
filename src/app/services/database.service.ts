@@ -30,15 +30,20 @@ export class DatabaseService {
 
   userDoc: any;
   user: any;
+
+  listingDoc: any;
+  listing: any;
   constructor(private afs: AngularFirestore) {}
 
-  ngOnInit() {
-    // this.usersCol = this.afs.collection('users');
-    // this.users = this.usersCol.snapshotChanges();
+  ngOnInit() {}
+
+  getListing(listingid: string | undefined) {
+    // this.userDoc = this.afs.collection('/users').doc(listingid).valueChanges();
+    // this.user = this.userDoc.valueChanges();
+    return this.afs.collection('/listings').doc(listingid).valueChanges();
   }
 
   getUser(userid: string | undefined) {
-    // this.userDoc = this.afs.doc('users/' + userid + '.json');
     this.userDoc = this.afs.collection('/users').doc(userid);
     this.user = this.userDoc.valueChanges();
     return this.user;
