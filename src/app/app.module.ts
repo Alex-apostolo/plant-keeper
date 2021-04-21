@@ -23,7 +23,7 @@ import { MatInputModule } from '@angular/material/input';
 import { LoginComponent } from './pages/login/login.component';
 import { HelpComponent } from './pages/help/help.component';
 import { DatabaseService } from './services/database.service';
-import { environment } from 'src/environments/environment';
+import { firebaseConfig } from 'src/environments/environment';
 import { AccountComponent } from './pages/account/account.component';
 import { ListingComponent } from './pages/listings/listing/listing.component';
 import { ListingsComponent } from './pages/listings/listings.component';
@@ -61,7 +61,7 @@ const appRoutes: Routes = [
     AppRoutingModule,
     NgbModule,
     RouterModule.forRoot(appRoutes),
-    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
     BrowserAnimationsModule,
     MatNativeDateModule,
