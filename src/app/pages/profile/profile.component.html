@@ -37,14 +37,14 @@
       /><br />
       <input
         type="text"
-        style="width: 100%; background-color: white"
+        style="text-align: center; width: 100%; background-color: white"
         placeholder="Email Address"
         [value]="profile['email']"
         disabled
       /><br />
       <input
         type="text"
-        style="width: 100%; background-color: white"
+        style="text-align: center; width: 100%; background-color: white"
         [value]="'Rating : ' + profile['rating'] + ' / 5'"
         disabled
       />
@@ -71,7 +71,6 @@
     </mat-select>
   </mat-form-field>
   <button type="button" class="submit" (click)="onHire(selectedListing)">
-    <!-- [disabled]="!selectedListing" -->
     Hire
   </button>
 </div>

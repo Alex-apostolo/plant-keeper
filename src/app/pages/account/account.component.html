@@ -10,7 +10,20 @@
   "
 >
   <div style="display: flex">
-    <img class="profile-image" [src]="user['url']" />
+    <input
+      style="display: none"
+      type="file"
+      multiple
+      (change)="onFileChanged($event)"
+      #hiddenfileinput
+    />
+    <img
+      class="profile-image"
+      [src]="
+        user['url'] || 'https://place-hold.it/150x150/fff/000?text=Select+Image'
+      "
+      (click)="hiddenfileinput.click()"
+    />
     <div
       style="
         display: flex;

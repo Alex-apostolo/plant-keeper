@@ -24,7 +24,6 @@ export class CreateListingComponent implements OnInit {
     this.minDate = new Date();
   }
   url: string | ArrayBuffer | null = null;
-  show = false;
   disableDate = true;
 
   chooseStartDate(startDate: any) {
@@ -46,10 +45,8 @@ export class CreateListingComponent implements OnInit {
         // called once readAsDataURL is completed
         if (event.target) {
           this.url = event.target.result;
-          console.log(this.url);
         }
       };
     }
-    this.show = true;
   }
 }

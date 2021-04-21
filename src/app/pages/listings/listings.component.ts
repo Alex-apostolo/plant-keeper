@@ -34,8 +34,8 @@ export class ListingsComponent implements OnInit {
     this.listings = [
       {
         owner: 'Andreas Lemesios',
-        location: 'Larnaca',
-        postcode: '7103',
+        location: 'Bath',
+        postcode: 'BA24PW',
         startDate: '4/5/2021',
         endDate: '4/5/2021',
         url: 'assets/plant.jpg',
